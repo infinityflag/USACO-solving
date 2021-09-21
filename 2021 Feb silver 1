@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <unordered_set>
+using namespace std;
+//#define mod 1e9;
+typedef long long ll;
+
+int main(){
+    int n;
+    cin >> n;
+    for(int i=0;i<n;i++){
+        int x,y;
+        cin >> x >> y;
+        q.push({x,y});
+        pair<int,int> p; 
+        cin >> p.first >> p.second;
+        cows_to_place.back(b);
+        auto re_evaluate = [&](int x, int y){
+            //if cow find then push queue on 4th
+            if(!present[x][y]){
+                return;
+            }
+            for(int i=0;i;)
+        }
+
+        for(int i=0;i<n;i++){
+            
+        }
+        //공헌하는 삶의 행복함
+
+    }
+}
