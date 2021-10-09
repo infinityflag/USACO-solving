@@ -8,32 +8,17 @@ typedef long long ll;
 queue<int> q;
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0);
-	//17 25 77
-	//ax+by<=c
 	int x,y,c;
 	cin >> x >> y >> c;
+	int n = c/x;
+	int m = c/y;
 	int ans =-1e9;
-	for(int i=1;;i++){
-		for(int j=1;;j++){
-			ans =max(ans,(x*i+y*j));
-			if(ans < c){
-				continue;
+	for(int i=0;i<=n;i++){
+		for(int j=0;j<=m;j++){
+			if(x*i+y*j<=c){
+				ans = max(ans,x*i+y*j);
 			}
-			//17 2B17 25 77bb5 77
-			else{
-				cout << ans;
-				return 0;
-			}
-			
-
-
-			5 3 4
 		}
 	}
-
-
-
-
-
-
+	cout << ans;
 }
