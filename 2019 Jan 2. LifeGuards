@@ -1,0 +1,53 @@
+
+//first try - wr
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <queue> 
+using namespace std;
+typedef long long ll;
+queue<int> q;
+int main() {
+	ios_base::sync_with_stdio(0); cin.tie(0);
+	int n;
+	cin >> n;
+	vector<int> cn(1001,0);
+	vector<vector<int>>ar(n,vector<int>(2,0));
+	/*
+	for(int i=0;i<n;i++){
+		for(int j=0;j<2;j++){
+			cin >> a[i][j];
+		}
+	}
+	*/ 
+	for(int i=0;i<n;i++){
+		int a,b;
+		cin >> a >> b;
+		for(int c=a;c<b;c++){
+			cn[c] += 1;
+		}
+		ar[i][0] = a; 
+		ar[i][1] = b;
+	}
+	//I have to delete it
+	int ans = -1e9;
+	for(int i=0;i<n;i++){
+		int a = ar[i][0];
+		int b = ar[i][1];
+		for(int j=a;j<b;j++){
+			cn[j] -= 1;
+		}
+		int c = 0;
+		for(int j=1;j<=1000;j++){
+			if(cn[j] == 1){
+				c++;
+			}
+		}	
+		ans = max(ans,c);
+		for(int j=a;j<b;j++){
+			cn[j] += 1;
+		}
+	}
+	cout << ans;
+
+}
